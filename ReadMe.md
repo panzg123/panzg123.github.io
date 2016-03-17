@@ -1,1 +1,1 @@
-####[博客](panzhengguang.github.io)
+####[博客](http://panzhengguang.github.io/)
