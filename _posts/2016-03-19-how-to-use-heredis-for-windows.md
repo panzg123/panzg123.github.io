@@ -29,16 +29,11 @@ GitHub上的**MSOpenTech/redis**项目地址，[download zip](https://github.com
 
 **步骤：**
 
-1 新建工程
-
-2 在工程属性中添加附加包含目录，`redis/src`和`deps/hiredis`
-
-3 添加附加库目录，指之前生成lib的目录，一般指"`redis/msvs/x64`"
-
-4 添加附加依赖项：`hiredis.lib` 和 `win32_interop.lib`，可能也需要`ws2_32.lib`.
-
-5 复制`src/Win32_Interop/win32fixes.c`到自己的工程目录
-
+1 新建工程  
+2 在工程属性中添加附加包含目录，`redis/src`和`deps/hiredis`  
+3 添加附加库目录，指之前生成lib的目录，一般指"`redis/msvs/x64`  
+4 添加附加依赖项：`hiredis.lib` 和 `win32_interop.lib`，可能也需要`ws2_32.lib`.  
+5 复制`src/Win32_Interop/win32fixes.c`到自己的工程目录  
 6 然后添加如下的实例代码，需要`include<hiredis.h>`和`<win32_interop\win32fixes.h>`，然后编译运行即可。
 
 
