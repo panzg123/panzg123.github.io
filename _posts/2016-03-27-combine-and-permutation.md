@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 组合与全排列
+categories: CPP
 ---
 
 [TOC]  

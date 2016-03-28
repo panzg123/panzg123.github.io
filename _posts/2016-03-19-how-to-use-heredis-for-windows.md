@@ -1,6 +1,7 @@
 ---
 layout: post
 title: windows下hiredis的编译与使用
+categories: redis
 ---
 下面介绍windows如何编译hiredis，以及如何使用hiredis
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: utf转GBK
+categories: Python
 ---
 目前github上的很多代码都是utf8编码，然而阅读源码时，SI软件中UTF8中文会乱码  
 解决方法是：将UTF8转化GBK,重新打开后Source Insight软件中文不会乱码  
