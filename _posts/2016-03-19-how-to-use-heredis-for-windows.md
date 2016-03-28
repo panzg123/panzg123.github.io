@@ -21,7 +21,7 @@ GitHub上的**MSOpenTech/redis**项目地址，[download zip](https://github.com
 如果只需要，`hiredis.lib`和`win32_interop.lib`，则只需要从解决方案资源管理器窗口编译hiredis工程和Win32_Interop工程，此时便会在x64/debug目录下生成这两个工程编译的lib
 
 注意：需要在上一步中，配置一下为`x64`结构，然后编译，在x64目录下可以看到如下结构：
-![Alt text](../images/redis_server_pic.png)
+![Alt text](/images/redis_server_pic.png)
 
 ### 使用Hiredis
 

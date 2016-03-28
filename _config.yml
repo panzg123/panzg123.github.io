@@ -1,32 +1,27 @@
-# Permalinks
-permalink:           pretty
+# Site settings
+title: panzg
+email: panzg123@qq.com
+description: 学习笔记
+# > # this means to ignore newlines until "baseurl:"
+#   Write an awesome description for your new site here. You can edit this
+#   line in _config.yml. It will appear in your document head meta (for
+#   Google search results) and in your feed.xml site description.
 
-# Setup
-title:               panzhengguang
-tagline:             我的Blog
-url:                 http://getpoole.com
-paginate:            1
-baseurl:             ""
+# baseurl: "" # the subpath of your site, e.g. /blog/
+# url: "http://yourdomain.com" # the base hostname & protocol for your site
+# twitter_username: jekyllrb
+github_username:  panzhengguang
+permalink: /:year/:month/:day/:title/
 
-# Assets
-#
-# We specify the directory for Jekyll so we can use @imports.
-sass:
-  sass_dir:          _sass
-  style:            :compressed
+# Build settings
+markdown: kramdown
+gems: [jekyll-paginate]
 
-# About/contact
-author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+paginate: 10
+paginate_path: "page:num"
 
-# Custom vars
-version:             2.0.0
-github:
-  repo:              https://github.com/panzhengguang/panzhengguang.github.io
-
-# Gems
-gems:
-  - jekyll-paginate
-  - jekyll-gist
+# highlight
+# 本地用rouge, github上用pygments
+# highlighter: pygments
+# highlighter: rouge
+# highlighter: false
