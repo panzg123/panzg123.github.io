@@ -25,8 +25,9 @@ panzhengguang的个人学习笔记
 - `md5_salt`网站中密码保存方案
 - `tornado_coroutine`Tornado中coroutine的常见用法
 - `url_shortener`的简单实现
+- `alipay_python`支付宝的即时到账接口，Python
 ## TODO
 
 - [ ] 迁移信息检索的博客
-- [ ] 支付宝的即时到账、批量转账接口demo
+- [x] 支付宝的即时到账、批量转账接口demo
 - [ ] Redis实现分布式锁
