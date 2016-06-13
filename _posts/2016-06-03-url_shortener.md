@@ -77,3 +77,4 @@ if __name__ == "__main__":
 1. [URL_shortening](https://en.wikipedia.org/wiki/URL_shortening "URL_shortening")
 2. [Building Your Own URL Shortener](https://www.sitepoint.com/building-your-own-url-shortener/ "Building Your Own URL Shortener")
 3. [How to code a URL shortener?](http://stackoverflow.com/questions/742013/how-to-code-a-url-shortener "How to code a URL shortener?")
+4. [站长之家---在线短链生成器](http://tool.chinaz.com/tools/dwz.aspx)
