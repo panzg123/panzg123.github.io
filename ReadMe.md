@@ -26,6 +26,8 @@ panzhengguang的个人学习笔记
 - `tornado_coroutine`Tornado中coroutine的常见用法
 - `url_shortener`的简单实现
 - `alipay_python`支付宝的即时到账接口，Python
+- `nginx_memcached_server_model`,常见服务器模型总结
+
 ## TODO
 
 - [ ] 迁移信息检索的博客
