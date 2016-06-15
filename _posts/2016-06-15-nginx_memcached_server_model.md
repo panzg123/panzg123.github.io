@@ -1,6 +1,6 @@
 ---
 layout: post
-title: nginx,memcached服务器模型总结
+title: nginx,memcached,redis网络模型总结
 categories: 网络编程
 ---
 ### nginx服务器模型
@@ -88,9 +88,52 @@ memcached是一款服务器缓存软件，基于`libvent`开发，使用的多�
 
 > 图片来源：http://www.lvtao.net/c/623.html
 
-### Redis服务器模型
+### Redis事件模型
 
-占坑
+Redis采用`单线程模型`，通过`IO多路复用`来监听多个连接，非阻塞IO，同时单线程避免了不必要的锁的开销。
+
+Redis同时处理文件事件和时间事件
+
+**文件事件**，Redis将产生事件套接字放入一个`队列`中，然后依次分派给文件事件处理器；Redis编写了多个文件事件处理器，如
+
+* 连接应答处理器`networking.c/acceptTcpHandler`；
+* 命令请求处理器`networking.c/readQueryFromClinet`；
+* 命令回复处理器`networking.c/sendReplyToClient`；
+
+**时间事件**包含`定时事件`和`周期性事件`，Redis将其放入一个`无序链表`中，每当时间事件执行器运行时，就遍历链表，查找已经到达的时间事件，调用相应的处理器。
+
+Redis中一个重要的时间事件是`serverCron`，Redis利用该函数来定期对自身的资源和状态进行检查和调整，时间周期可以参考`redis.conf`关于hz选项说明，其主要工作包含:
+
+1. 更新服务器的各类统计信息
+2. 清理数据库中的过期键值对
+3. 关闭和清理失效的客户端连接
+4. 进行AOF和RDB持久化操作
+5. 如果服务器是主服务器，则进行定期同步
+6. 如果处于集群模式，对集群定期同步和连接测试
+
+`Redis主函数`关于事件处理的代码表示如下：
+
+```
+def main():
+    #一直循环处理事件
+    while(not_stop){
+        aeProcessEvents()
+	}
+```
+
+下面展示`aeProcessEvents`调度文件事件和时间事件的过程：
+
+```
+def aeProcessEvents():
+    time_event = aeSearchNearestTimer() #获取当前时间最近的时间事件
+	remaind_ms = time_event.when - unix_ts_now() #获取最近的时间事件达到的毫秒时间
+	if remaind_ms < 0 : #时间为负数，赋值0
+	    remaind_ms = 0
+	timeval = create_timeval_with_ms(remainds_ms) #创建等待的时间结构
+	aeApiPoll(timeval) #等待文件事件产生，时间取决于remainds_ms
+	processFileEvent() #处理文件事件
+	processTimeEvent() #处理时间事件
+```
 
 ### Libevent网络模型总结
 
@@ -99,3 +142,4 @@ memcached是一款服务器缓存软件，基于`libvent`开发，使用的多�
 ### Reference
 1. [Nginx从入门到精通](http://tengine.taobao.org/book/chapter_02.html "Nginx从入门到精通")
 2. [lvtao博客](http://www.lvtao.net/c/623.html)
+3. [Redis设计与实现](http://item.jd.com/11486101.html)
