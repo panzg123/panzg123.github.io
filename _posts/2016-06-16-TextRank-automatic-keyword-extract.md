@@ -75,18 +75,18 @@ R(u)和R(v)是分别是网页u、v的PageRank值，Bu指的是指向网页u的�
 首先，先读入文本，并切词，对切词结果统计共现关系，窗口大小默认为5，保存到`cm`中.  
 
 ```
- cm = defaultdict(int)
+        cm = defaultdict(int)
         #切词
         words = tuple(self.tokenizer.cut(sentence))
         for i, wp in enumerate(words):
-		    #过滤词性，停用词等
+        #过滤词性，停用词等
             if self.pairfilter(wp):
                 for j in xrange(i + 1, i + self.span):
                     if j >= len(words):
                         break
                     if not self.pairfilter(words[j]):#过滤
                         continue
-					#保存到字典中
+                    #保存到字典中
                     if allowPOS and withFlag:
                         cm[(wp, words[j])] += 1
                     else:
@@ -97,8 +97,8 @@ R(u)和R(v)是分别是网页u、v的PageRank值，Bu指的是指向网页u的�
 
 ```
   for terms, w in cm.items():
-            #遍历cm，构建无向图
-            g.addEdge(terms[0], terms[1], w)
+        #遍历cm，构建无向图
+        g.addEdge(terms[0], terms[1], w)
 ```
 
 然后，对无向带权图`g`套用PageRank  
@@ -143,16 +143,17 @@ def rank(self):
 最后，对`图g`中节点值排序，值最高的`top k`即为文本的关键词,默认返回20个  
 
 ```
- if withWeight:
-            #排序
-            tags = sorted(nodes_rank.items(), key=itemgetter(1), reverse=True)
-        else:
-            tags = sorted(nodes_rank, key=nodes_rank.__getitem__, reverse=True)
-        #返回top k
-        if topK:
-            return tags[:topK]
-        else:
-            return tags
+if withWeight:
+   #排序
+   tags = sorted(nodes_rank.items(), key=itemgetter(1), reverse=True)
+else:
+   tags = sorted(nodes_rank, key=nodes_rank.__getitem__, reverse=True)
+
+#返回top k
+if topK:
+    return tags[:topK]
+else:
+    return tags
 ```
 
 以上就是jieba用TextRank抽取关键词的全过程，mark
