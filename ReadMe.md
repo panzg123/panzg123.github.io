@@ -29,6 +29,7 @@ panzhengguang的个人学习笔记
 - `nginx_memcached_server_model`,常见服务器模型总结
 - `simple_search_engine`信息检索之简单搜索引擎的实现
 - `tfidf-automatic-keyword-extract`利用tfidf实现关键词自动抽取
+- `TextRank-automatic-keyword-extract`利用TextRank实现关键词自动抽取
 
 ## TODO
 

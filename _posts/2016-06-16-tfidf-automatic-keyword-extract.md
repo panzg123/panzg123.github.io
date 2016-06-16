@@ -42,8 +42,8 @@ categories: IR
 
 其他接口:
 
-* ` jieba.analyse.set_idf_path(file_name)`自定义idf文件
-* ` jieba.analyse.set_stop_words(file_name)`自定义停用词文件。
+* ` jieba.analyse.set_idf_path(file_name)`自定义idf文件
+* ` jieba.analyse.set_stop_words(file_name)`自定义停用词文件。
 
 ------------------
 
@@ -58,7 +58,11 @@ categories: IR
 3. 统计每个词的词频，即`tf`
 4. 计算每个词的`tf-idf`值，返回`top k`,k为约定的关键词的数目
 
-Note：idf值需要经过大语料库来统计获取，这样抽取关键词的效果才更好。
+Note：idf值需要经过大语料库来统计获取，这样抽取关键词的效果才更好，idf文件样本数据如下：
+
+`格式：词项 idf值`
+
+[![](http://7xsvsk.com1.z0.glb.clouddn.com/idf_txt.png)](http://7xsvsk.com1.z0.glb.clouddn.com/idf_txt.png)
 
 **tfidf.py源码注解：**
 
@@ -77,7 +81,7 @@ class KeywordExtractor(object):
             raise Exception("jieba: file does not exist: " + abs_path)
         content = open(abs_path, 'rb').read().decode('utf-8')
         #保存到stop_words中
-		for line in content.splitlines():
+        for line in content.splitlines():
             self.stop_words.add(line)
 
     def extract_tags(self, *args, **kwargs):
@@ -93,7 +97,7 @@ class IDFLoader(object):
         if idf_path:
             self.set_new_path(idf_path)
     
-	#从idf文件中读取词的idf值，保存到idf_freq字典中，用median_idf记录中位数
+    #从idf文件中读取词的idf值，保存到idf_freq字典中，用median_idf记录中位数
     def set_new_path(self, new_idf_path):
         if self.path != new_idf_path:
             self.path = new_idf_path
@@ -102,8 +106,8 @@ class IDFLoader(object):
             for line in content.splitlines():
                 word, freq = line.strip().split(' ')
                 #保存词的idf值
-				self.idf_freq[word] = float(freq)
-			#中位数
+                self.idf_freq[word] = float(freq)
+            #中位数
             self.median_idf = sorted(
                 self.idf_freq.values())[len(self.idf_freq) // 2]
     #获取idf值，median值
@@ -136,7 +140,7 @@ class TFIDF(KeywordExtractor):
             - allowPOS: 关键词的词性列表，不在此列表的将被过滤
             - withFlag: 
         """
-		#开始切词
+        #开始切词
         if allowPOS:
             allowPOS = frozenset(allowPOS)
             words = self.postokenizer.cut(sentence)
@@ -150,15 +154,15 @@ class TFIDF(KeywordExtractor):
                 elif not withFlag:
                     w = w.word
             wc = w.word if allowPOS and withFlag else w
-			#停用词过滤
+            #停用词过滤
             if len(wc.strip()) < 2 or wc.lower() in self.stop_words:
                 continue
-			#计算tf值
+            #计算tf值
             freq[w] = freq.get(w, 0.0) + 1.0
         total = sum(freq.values())
         for k in freq:
             kw = k.word if allowPOS and withFlag else k
-			#计算tf_idf值
+            #计算tf_idf值
             freq[k] *= self.idf_freq.get(kw, self.median_idf) / total
         #返回tf-idf值最高的k个，作为关键词
         if withWeight:
