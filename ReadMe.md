@@ -33,6 +33,7 @@ panzhengguang的个人学习笔记
 - `naive_bayes_map_reduce`基于MapReduce的朴素贝叶斯文本分类器的设计与实现
 - `naive_bayes_mahout`Mahout中文文本分类使用教程
 - `sort or qsort` std::sort和qsort的学习
+- `redis_sds` Redis基础数据结构之简单字符串的实现分析
 
 ## TODO
 
