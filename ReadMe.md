@@ -32,9 +32,10 @@ panzhengguang的个人学习笔记
 - `TextRank-automatic-keyword-extract`利用TextRank实现关键词自动抽取
 - `naive_bayes_map_reduce`基于MapReduce的朴素贝叶斯文本分类器的设计与实现
 - `naive_bayes_mahout`Mahout中文文本分类使用教程
+- `sort or qsort` std::sort和qsort的学习
 
 ## TODO
 
-- [ ] 迁移信息检索的博客
+- [x] 迁移信息检索的博客
 - [x] 支付宝的即时到账、批量转账接口demo
 - [ ] Redis实现分布式锁
