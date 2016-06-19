@@ -34,6 +34,7 @@ panzhengguang的个人学习笔记
 - `naive_bayes_mahout`Mahout中文文本分类使用教程
 - `sort or qsort` std::sort和qsort的学习
 - `redis_sds` Redis基础数据结构之简单字符串的实现分析
+- `redis_list` Redis基础数据结构之链表的实现分析
 
 ## TODO
 
