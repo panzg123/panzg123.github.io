@@ -37,6 +37,8 @@ panzhengguang的个人学习笔记
 - `redis_list` Redis基础数据结构之链表的实现分析
 - `redis_dict` Redis基础数据结构之字典的实现分析
 - `leshi_01` 2017乐视编程题，困兽之斗
+- `redis_db` Redis中数据库的实现分析
+- `redis_event_model` Redis中事件模型的分析
 
 ## TODO
 
