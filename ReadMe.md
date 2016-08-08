@@ -1,4 +1,4 @@
-博客访问地址：[点击这里](http://panzhengguang.github.io/)  
+博客访问地址：[点击这里](http://panzhengguang.github.io/)  或者直接打开_posts目录下的markdown文件
 
 **模板来源:  Jekyll theme by [Gaohaoyang](https://github.com/Gaohaoyang/gaohaoyang.github.io)**
 
@@ -39,6 +39,8 @@ panzhengguang的个人学习笔记
 - `leshi_01` 2017乐视编程题，困兽之斗
 - `redis_db` Redis中数据库的实现分析
 - `redis_event_model` Redis中事件模型的分析
+- `redis_server_model` Redis中服务器流程的分析
+- `redis_how_to_replication` Redis中主从复制的内部机制分析
 
 ## TODO
 
