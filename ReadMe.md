@@ -3,7 +3,7 @@
 **模板来源:  Jekyll theme by [Gaohaoyang](https://github.com/Gaohaoyang/gaohaoyang.github.io)**
 
 
-panzhengguang的个人学习笔记
+panzg123的个人学习笔记
 ## 文章更新目录
 
 - `convert_utf_2_gbk` 源代码的格式转换
