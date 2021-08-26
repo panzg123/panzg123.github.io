@@ -58,9 +58,9 @@ mahout testnb -i ./20news-test-vectors -m ./model -l ./labelindex -ow -o ./20new
 
 ------------
 
-**如果各位觉得这篇博客和代码对您有一定帮助，还请给[本博客](https://github.com/panzhengguang/panzhengguang.github.io)`star`一下，谢谢各位。**
+**如果各位觉得这篇博客和代码对您有一定帮助，还请给[本博客](https://github.com/panzg123/panzg123.github.io)`star`一下，谢谢各位。**
 
-作者：[panzhengguang](https://github.com/panzhengguang)
+作者：[panzg123](https://github.com/panzg123)
 
 记录：6-16日迁移自我的博客园[西芒xiaoP](http://www.cnblogs.com/panweishadow/)
 

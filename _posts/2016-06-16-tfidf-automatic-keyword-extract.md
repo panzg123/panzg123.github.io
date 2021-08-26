@@ -182,8 +182,8 @@ class TFIDF(KeywordExtractor):
 
 ------------
 
-**如果各位觉得这篇博客和代码对您有一定帮助，还请给[本博客](https://github.com/panzhengguang/panzhengguang.github.io)`star`一下，谢谢各位。**
+**如果各位觉得这篇博客和代码对您有一定帮助，还请给[本博客](https://github.com/panzg123/panzg123.github.io)`star`一下，谢谢各位。**
 
-作者：[panzhengguang](https://github.com/panzhengguang)
+作者：[panzg123](https://github.com/panzg123)
 
 若用于非商业目的，您可以自由转载，但请保留原作者信息和文章链接URL。

@@ -121,11 +121,11 @@ note:本代码仅供参考，大家主要是把整个流程搞清楚就行，这
 
 **如果各位觉得这篇博客和代码对您有一定帮助，还请您给我的下面的github地址一颗星，谢谢各位。**
 
-**地址：[Simple_Search_Engine](https://github.com/panzhengguang/Simple_Search_Engine)**
+**地址：[Simple_Search_Engine](https://github.com/panzg123/Simple_Search_Engine)**
 
 ------------
 
-作者：[panzhengguang](https://github.com/panzhengguang)
+作者：[panzg123](https://github.com/panzg123)
 
 记录：6-15日迁移自我的博客园[西芒xiaoP](http://www.cnblogs.com/panweishadow/)
 

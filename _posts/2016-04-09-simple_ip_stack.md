@@ -20,7 +20,7 @@ categories: 网络编程
 
 # 3.源码结构图
 
-源代码地址：[https://github.com/panzhengguang/Unix_Net_Programming/tree/master/SimpleStack](https://github.com/panzhengguang/Unix_Net_Programming/tree/master/SimpleStack "https://github.com/panzhengguang/Unix_Net_Programming/tree/master/SimpleStack")
+源代码地址：[https://github.com/panzg123/Unix_Net_Programming/tree/master/SimpleStack](https://github.com/panzg123/Unix_Net_Programming/tree/master/SimpleStack "https://github.com/panzg123/Unix_Net_Programming/tree/master/SimpleStack")
   
 ```  
 src  
@@ -48,7 +48,7 @@ src
 
 > **《Linux网络编程》**
 
- 　　**作者**：[西芒xiaoP & panzhengguang](https://github.com/panzhengguang)
+ 　　**作者**：[西芒xiaoP & panzg123](https://github.com/panzg123)
 
 **　　出处**：同步自博客[`西芒xiaoP`](http://www.cnblogs.com/panweishadow/)
 

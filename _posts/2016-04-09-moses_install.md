@@ -145,6 +145,6 @@ cd irstlm-5.80.03
 > 
 > 一个帮助很大的文档：http://pan.baidu.com/s/1hq3yORE
 
-**      作者**：[西芒xiaoP](http://panzhengguang.github.io/)
+**      作者**：[西芒xiaoP](http://panzg123.github.io/)
 
 若用于非商业目的，您可以自由转载，但请保留原作者信息和文章链接URL。

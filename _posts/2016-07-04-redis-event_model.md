@@ -7,7 +7,7 @@ categories: redis
 
 `Redis`没有使用第三方的libevent等网络库，而是自己开发了一个单线程的Reactor模型的事件处理模型。而`Memcached`内部使用的libevent库，多线程模型。
 
-综合对比可见：**[nginx,memcached,redis网络模型总结](http://panzhengguang.github.io/2016/06/15/nginx_memcached_server_model/)**
+综合对比可见：**[nginx,memcached,redis网络模型总结](http://panzg123.github.io/2016/06/15/nginx_memcached_server_model/)**
 
 Redis在主循环中统一处理文件事件和时间事件，信号事件则由专门的handler来处理。
 
@@ -398,8 +398,8 @@ void setupSignalHandlers(void) {
 
 --------------------------------------------
 
-**如果各位觉得这篇博客和代码对您有一定帮助，还请给[本博客](https://github.com/panzhengguang/panzhengguang.github.io)`star`一下，谢谢各位。**
+**如果各位觉得这篇博客和代码对您有一定帮助，还请给[本博客](https://github.com/panzg123/panzg123.github.io)`star`一下，谢谢各位。**
 
-作者：[panzhengguang](https://github.com/panzhengguang)
+作者：[panzg123](https://github.com/panzg123)
 
 若用于非商业目的，您可以自由转载，但请保留原作者信息和文章链接URL。

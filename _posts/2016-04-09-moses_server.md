@@ -96,6 +96,6 @@ index.html请求页面通过post方式提交请求：
 - [官方手册]( http://www.statmt.org/moses/?n=Moses.WebTranslation)  
   
   
-**作者**：[panzhengguang](http://panzhengguang.github.io/)  
+**作者**：[panzg123](http://panzg123.github.io/)  
 2016-04-09 由博客园迁移至Github  
 若用于非商业目的，您可以自由转载，但请保留原作者信息和文章链接URL。 

@@ -411,7 +411,7 @@ csdn,[WEB前端性能分析--工具篇](http://blog.csdn.net/five3/article/detai
 
 开源中文社区，Linux性能监测专题，[http://linux.cn/topic-linux-system-performance-monitoring.html](http://linux.cn/topic-linux-system-performance-monitoring.html "http://linux.cn/topic-linux-system-performance-monitoring.html")
 
-**作者**：[panzhengguang](https://github.com/panzhengguang)
+**作者**：[panzg123](https://github.com/panzg123)
 
 **出处**：同步自博客[西芒xiaoP](http://www.cnblogs.com/panweishadow/)
 

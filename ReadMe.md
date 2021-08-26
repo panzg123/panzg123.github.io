@@ -1,4 +1,4 @@
-博客访问地址：[点击这里](http://panzhengguang.github.io/)  或者直接打开_posts目录下的markdown文件
+博客访问地址：[点击这里](http://panzg123.github.io/)  或者直接打开_posts目录下的markdown文件
 
 **模板来源:  Jekyll theme by [Gaohaoyang](https://github.com/Gaohaoyang/gaohaoyang.github.io)**
 
