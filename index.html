@@ -35,11 +35,11 @@ layout: default
 
         {% for page in (1..paginator.total_pages) %}
           {% if page == paginator.page %}
-          <em>{{ page }}</em>
+          <em class="active">{{ page }}</em>
           {% elsif page == 1 %}
             <a href="index.html"> {{ page }} </a>
           {% else %}
-            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: 'page:num', page }}">{{ page }} </a>
+            <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }} </a>
           {% endif %}
         {% endfor %}
 
