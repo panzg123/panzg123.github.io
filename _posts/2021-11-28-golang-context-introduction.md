@@ -10,6 +10,7 @@ context.Context常用于多个goroutine之间同步取消、截止时间和携�
 ### 2. 接口设计
 
 #### Context interface
+
 ```go
 type Context interface {
     Deadline() (deadline time.Time, ok bool)
@@ -20,12 +21,14 @@ type Context interface {
 ```
 
 其中包括四个接口：
+
 - Deadline 返回截止时间，如未设置截止时间，则返回ok=false
 - Done 返回一个channel，它在工作完成时或者上下文取消时被关闭；如ctx不会被取消，则返回nil。
 - Err 返回ctx取消的原因，常见两个DeadlineExceeded 和 Canceled
 - Value 携带的特定数据，从valueContext中取出，若当前ctx不存在，则从parentCtx中查找
 
 #### 常用接口
+
 - Background  内部实现是一个emptyCtx，不可取消，没有截止时间，不可携带数据。
 - TODO 同上，适用场景有稍微区别，仅在不确认使用哪种上下文时使用。
 - WithCancel  从parentContext衍生一个新的子上下文，并返回用于取消该context的函数。当取消函数执行时，该context以及树形结构上的所有衍生的子context都会被取消。此时Done函数返回的channel被关闭，以及Err函数会返回context.Canceled错误码。
@@ -36,7 +39,9 @@ type Context interface {
 ### 3. 使用场景
 
 #### 3.1 RPC链路超时
+
 分别是rpc client端和server端的两个例子
+
 ```go
 // rpcInvoke client端发起rpc请求，timeout 自定义的超时时间
 func rpcInvoke(ctx context.Context, timeout int32) error {
@@ -84,7 +89,9 @@ func rpcHandle(ctx context.Context, timeout int32) error {
     return nil
 }
 ```
+
 #### 3.2 RPC ctx参数携带
+
 ```go
 const ContextTraceKey = "TraceKey"
 
@@ -100,6 +107,7 @@ func TraceID(ctx context.Context) string {
     return ""
 }
 ```
+
 ### 4.源码分析
 
 #### 4.1 可撤销ctx实现
@@ -152,14 +160,18 @@ func propagateCancel(parent Context, child canceler) {
 - 父ctx撤销时，会向所有子ctx传递撤销信号，此时是深度优先的。
 
 #### 4.2 Value ctx实现
+
 在Context的基础上，附加了一个key, value interface{} 用于携带信息
+
 ```go
 type valueCtx struct {
     Context
     key, val interface{}
 }
 ```
+
 然后，在查找的时候，先判断当前ctx有无数据，如无，则向上递归查找
+
 ```go
 func (c *valueCtx) Value(key interface{}) interface{} {
     if c.key == key {
